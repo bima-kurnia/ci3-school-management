@@ -1,0 +1,60 @@
+.DS_Store
+
+application/cache/*
+!application/cache/index.html
+
+application/logs/*
+!application/logs/index.html
+
+!application/*/.htaccess
+
+composer.lock
+tests/mocks/database/ci_test.sqlite
+
+user_guide_src/build/*
+user_guide_src/cilexer/build/*
+user_guide_src/cilexer/dist/*
+user_guide_src/cilexer/pycilexer.egg-info/*
+/vendor/
+
+# IDE Files
+#-------------------------
+/nbproject/
+.idea/*
+
+## Sublime Text cache files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+/tests/tests/
+/tests/results/
+
+# Cache dan Log sistem
+application/logs/*
+!application/logs/index.html
+application/cache/*
+!application/cache/index.html
+
+# Database dan Konfigurasi Sensitif
+# Disarankan untuk menggunakan folder 'development' atau 'testing' untuk config lokal
+application/config/development/
+application/config/testing/
+
+# Jika ingin mengabaikan file config utama (pastikan ada backup manual)
+# application/config/database.php
+# application/config/config.php
+
+# File Composer (jika digunakan)
+vendor/
+
+# User Guide (opsional, biasanya tidak diperlukan di repo)
+user_guide/
+
+# File OS & IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
