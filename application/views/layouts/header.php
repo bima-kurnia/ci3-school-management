@@ -161,6 +161,11 @@
             <i class="fa fa-sitemap"></i> Class Subjects
         </a></li>
 
+        <li><a href="<?= site_url('grades') ?>"
+               class="<?= ($this->uri->segment(1) === 'grades') ? 'active' : '' ?>">
+            <i class="fa fa-pencil-square-o"></i> Grades
+        </a></li>
+
         <div class="sidebar-section">Attendance</div>
         <li><a href="<?= site_url('attendance') ?>"
                class="<?= ($this->uri->segment(1) === 'attendance') ? 'active' : '' ?>">

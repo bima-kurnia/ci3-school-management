@@ -44,6 +44,47 @@
         var status = $(this).data('status');
         $('input[type="radio"][value="' + status + '"]').prop('checked', true);
     });
+
+    // Dynamically load subjects when class changes (on views/grades/index).
+    $('#class_id').on('change', function() {
+        var class_id = $(this).val();
+        var $subject = $('#subject_id');
+
+        $subject.html('<option value="">Loading...</option>');
+
+        if (!class_id) {
+            $subject.html('<option value="">-- Select Class First --</option>');
+            return;
+        }
+
+        $.getJSON('<?= site_url("grades/get_subjects") ?>/' + class_id, function(data) {
+            var options = '<option value="">-- Select Subject --</option>';
+            if (data.length === 0) {
+                options = '<option value="">No subjects assigned</option>';
+            }
+            $.each(data, function(i, subject) {
+                options += '<option value="' + subject.id + '">' + subject.name + '</option>';
+            });
+            $subject.html(options);
+        });
+    });
+
+    // Live grade label update as user types
+    $(document).on('input', '.score-input', function() {
+        var score = parseFloat($(this).val());
+        var $label = $(this).closest('tr').find('.grade-label');
+        if (isNaN(score) || $(this).val() === '') {
+            $label.html('<span class="text-muted">—</span>');
+            return;
+        }
+        var grade, cls;
+        if      (score >= 90) { grade = 'A'; cls = 'success'; }
+        else if (score >= 80) { grade = 'B'; cls = 'info'; }
+        else if (score >= 70) { grade = 'C'; cls = 'primary'; }
+        else if (score >= 60) { grade = 'D'; cls = 'warning'; }
+        else                  { grade = 'F'; cls = 'danger'; }
+        $label.html('<span class="label label-' + cls + '" style="font-size:14px">' + grade + '</span>');
+    });
 </script>
 </body>
 </html>

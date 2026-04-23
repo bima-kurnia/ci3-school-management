@@ -56,13 +56,13 @@ $route['auth/login']         = 'Auth/login';
 $route['auth/logout']        = 'Auth/logout';
 
 // Dashboard
-$route['dashboard']          = 'Dashboard/index';
+$route['dashboard'] = 'Dashboard/index';
 
 // Classes
-$route['classes']              = 'Classes/index';
-$route['classes/create']       = 'Classes/create';
-$route['classes/edit/(:num)']  = 'Classes/edit/$1';
-$route['classes/delete/(:num)']= 'Classes/delete/$1';
+$route['classes']               = 'Classes/index';
+$route['classes/create']        = 'Classes/create';
+$route['classes/edit/(:num)']   = 'Classes/edit/$1';
+$route['classes/delete/(:num)'] = 'Classes/delete/$1';
 
 // Students
 $route['students']               = 'Students/index';
@@ -90,10 +90,18 @@ $route['class_subjects/delete/(:num)']   = 'Class_subjects/delete/$1';
 $route['class_subjects/by_class/(:num)'] = 'Class_subjects/by_class/$1';
 
 // Attendance
-$route['attendance']          = 'Attendance/index';
-$route['attendance/take']     = 'Attendance/take';
-$route['attendance/save']     = 'Attendance/save';
-$route['attendance/summary']  = 'Attendance/summary';
+$route['attendance']         = 'Attendance/index';
+$route['attendance/take']    = 'Attendance/take';
+$route['attendance/save']    = 'Attendance/save';
+$route['attendance/summary'] = 'Attendance/summary';
+
+// Grades
+$route['grades']                     = 'Grades/index';
+$route['grades/input']               = 'Grades/input';
+$route['grades/save']                = 'Grades/save';
+$route['grades/summary']             = 'Grades/summary';
+$route['grades/report_card/(:num)']  = 'Grades/report_card/$1';
+$route['grades/get_subjects/(:num)'] = 'Grades/get_subjects/$1';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
