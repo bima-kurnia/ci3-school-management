@@ -50,10 +50,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
+// Auth
 $route['default_controller'] = 'Auth';
-$route['dashboard']          = 'Dashboard/index';
 $route['auth/login']         = 'Auth/login';
 $route['auth/logout']        = 'Auth/logout';
+
+// Dashboard
+$route['dashboard']          = 'Dashboard/index';
+
+// Classes
+$route['classes']              = 'Classes/index';
+$route['classes/create']       = 'Classes/create';
+$route['classes/edit/(:num)']  = 'Classes/edit/$1';
+$route['classes/delete/(:num)']= 'Classes/delete/$1';
+
+// Students
+$route['students']               = 'Students/index';
+$route['students/create']        = 'Students/create';
+$route['students/edit/(:num)']   = 'Students/edit/$1';
+$route['students/delete/(:num)'] = 'Students/delete/$1';
+
+// Teachers
+$route['teachers']               = 'Teachers/index';
+$route['teachers/create']        = 'Teachers/create';
+$route['teachers/edit/(:num)']   = 'Teachers/edit/$1';
+$route['teachers/delete/(:num)'] = 'Teachers/delete/$1';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
