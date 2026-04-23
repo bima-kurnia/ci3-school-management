@@ -140,13 +140,25 @@
                class="<?= ($this->uri->segment(1) === 'students') ? 'active' : '' ?>">
             <i class="fa fa-user-circle"></i> Students
         </a></li>
+        
         <li><a href="<?= site_url('teachers') ?>"
                class="<?= ($this->uri->segment(1) === 'teachers') ? 'active' : '' ?>">
             <i class="fa fa-user"></i> Teachers
         </a></li>
+
         <li><a href="<?= site_url('classes') ?>"
                class="<?= ($this->uri->segment(1) === 'classes') ? 'active' : '' ?>">
             <i class="fa fa-building"></i> Classes
+        </a></li>
+
+        <li><a href="<?= site_url('subjects') ?>"
+       class="<?= ($this->uri->segment(1) === 'subjects') ? 'active' : '' ?>">
+            <i class="fa fa-book"></i> Subjects
+        </a></li>
+
+        <li><a href="<?= site_url('class_subjects') ?>"
+               class="<?= ($this->uri->segment(1) === 'class_subjects') ? 'active' : '' ?>">
+            <i class="fa fa-sitemap"></i> Class Subjects
         </a></li>
         <?php endif; ?>
     </ul>

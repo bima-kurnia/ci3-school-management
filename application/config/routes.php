@@ -76,5 +76,18 @@ $route['teachers/create']        = 'Teachers/create';
 $route['teachers/edit/(:num)']   = 'Teachers/edit/$1';
 $route['teachers/delete/(:num)'] = 'Teachers/delete/$1';
 
+// Subjects
+$route['subjects']               = 'Subjects/index';
+$route['subjects/create']        = 'Subjects/create';
+$route['subjects/edit/(:num)']   = 'Subjects/edit/$1';
+$route['subjects/delete/(:num)'] = 'Subjects/delete/$1';
+
+// Class Subjects
+$route['class_subjects']                 = 'Class_subjects/index';
+$route['class_subjects/create']          = 'Class_subjects/create';
+$route['class_subjects/edit/(:num)']     = 'Class_subjects/edit/$1';
+$route['class_subjects/delete/(:num)']   = 'Class_subjects/delete/$1';
+$route['class_subjects/by_class/(:num)'] = 'Class_subjects/by_class/$1';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
