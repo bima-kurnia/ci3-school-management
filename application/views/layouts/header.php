@@ -69,6 +69,55 @@
 
         /* Alert flash */
         .flash-message { margin-bottom: 20px; }
+
+        /* 1. Reset Total Pembungkus Luar */
+        .dataTables_wrapper .dataTables_paginate .paginate_button {
+            padding: 0 !important;
+            margin: 0 !important;
+            border: none !important;
+            background: transparent !important;
+            box-shadow: none !important;
+        }
+
+        /* 2. Styling Hanya untuk Tombol/Link di Dalamnya */
+        .dataTables_wrapper .dataTables_paginate .paginate_button a, 
+        .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+            display: inline-block !important;
+            padding: 6px 12px !important;
+            border: 1px solid #dee2e6 !important;
+            color: #0d6efd !important;
+            background-color: #fff !important;
+            text-decoration: none !important;
+            border-radius: 4px; /* Opsional: beri radius */
+            margin: 0 2px; /* Memberi jarak antar kotak agar tidak menempel */
+        }
+
+        /* 3. Warna saat Halaman Aktif (Current) */
+        .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+            background-color: #0d6efd !important;
+            color: white !important;
+            border-color: #0d6efd !important;
+        }
+
+        /* 4. Hover Effect */
+        .dataTables_wrapper .dataTables_paginate .paginate_button:hover a,
+        .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+            background-color: #e9ecef !important;
+            color: #0a58ca !important;
+        }
+
+        /* 5. Hilangkan efek hover biru bawaan DataTables yang sering bikin garis double */
+        .dataTables_wrapper .dataTables_paginate .paginate_button:active {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        /* Menargetkan wrapper yang membungkus informasi (kiri) dan pagination (kanan) */
+        .dataTables_wrapper .dataTables_paginate {
+            display: flex !important;
+            justify-content: flex-end !important;
+            float: none !important; /* Menghapus float lama jika ada */
+        }
     </style>
 </head>
 <body>
@@ -127,14 +176,14 @@
 
         <!-- Flash Messages -->
         <?php if ($this->session->flashdata('success')): ?>
-            <div class="alert alert-success alert-dismissible flash-message">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <div class="alert alert-success alert-dismissible flash-message" role="alert">
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                 <i class="fa fa-check-circle"></i> <?= $this->session->flashdata('success') ?>
             </div>
         <?php endif; ?>
         <?php if ($this->session->flashdata('error')): ?>
-            <div class="alert alert-danger alert-dismissible flash-message">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <div class="alert alert-danger alert-dismissible flash-message" role="alert">
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                 <i class="fa fa-warning"></i> <?= $this->session->flashdata('error') ?>
             </div>
         <?php endif; ?>
