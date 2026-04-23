@@ -160,6 +160,12 @@
                class="<?= ($this->uri->segment(1) === 'class_subjects') ? 'active' : '' ?>">
             <i class="fa fa-sitemap"></i> Class Subjects
         </a></li>
+
+        <div class="sidebar-section">Attendance</div>
+        <li><a href="<?= site_url('attendance') ?>"
+               class="<?= ($this->uri->segment(1) === 'attendance') ? 'active' : '' ?>">
+            <i class="fa fa-calendar"></i> Attendance
+        </a></li>
         <?php endif; ?>
     </ul>
 </div>
@@ -175,6 +181,7 @@
         <div class="user-info">
             <span><i class="fa fa-user-circle"></i>
                 <?= $current_user->username ?>
+                |
                 <span class="label label-danger"><?= $current_user->role ?></span>
             </span>
             <a href="<?= site_url('auth/logout') ?>" class="btn-logout">

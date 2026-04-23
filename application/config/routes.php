@@ -89,5 +89,11 @@ $route['class_subjects/edit/(:num)']     = 'Class_subjects/edit/$1';
 $route['class_subjects/delete/(:num)']   = 'Class_subjects/delete/$1';
 $route['class_subjects/by_class/(:num)'] = 'Class_subjects/by_class/$1';
 
+// Attendance
+$route['attendance']          = 'Attendance/index';
+$route['attendance/take']     = 'Attendance/take';
+$route['attendance/save']     = 'Attendance/save';
+$route['attendance/summary']  = 'Attendance/summary';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

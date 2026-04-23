@@ -20,7 +20,7 @@
         });
     }
 
-    // SweetAlert2 delete confirmation
+    // SweetAlert2 delete confirmation.
     $(document).on('click', '.btn-delete', function(e) {
         e.preventDefault();
         var url = $(this).attr('href');
@@ -37,6 +37,12 @@
                 window.location.href = url;
             }
         });
+    });
+
+    // Mark all students with a single status (on views/attendance/task).
+    $('.mark-all').on('click', function() {
+        var status = $(this).data('status');
+        $('input[type="radio"][value="' + status + '"]').prop('checked', true);
     });
 </script>
 </body>
