@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= isset($title) ? $title . ' — SchoolMS' : 'SchoolMS' ?></title>
 
-    <!-- Bootstrap 3 -->
+    <!-- Bootstrap 5 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -170,6 +170,12 @@
         <li><a href="<?= site_url('attendance') ?>"
                class="<?= ($this->uri->segment(1) === 'attendance') ? 'active' : '' ?>">
             <i class="fa fa-calendar"></i> Attendance
+        </a></li>
+
+        <div class="sidebar-section">Finance</div>
+        <li><a href="<?= site_url('payments') ?>"
+               class="<?= ($this->uri->segment(1) === 'payments') ? 'active' : '' ?>">
+            <i class="fa fa-money"></i> Payments
         </a></li>
         <?php endif; ?>
     </ul>

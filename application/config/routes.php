@@ -103,5 +103,13 @@ $route['grades/summary']             = 'Grades/summary';
 $route['grades/report_card/(:num)']  = 'Grades/report_card/$1';
 $route['grades/get_subjects/(:num)'] = 'Grades/get_subjects/$1';
 
+// Payments
+$route['payments']                  = 'Payments/index';
+$route['payments/create']           = 'Payments/create';
+$route['payments/edit/(:num)']      = 'Payments/edit/$1';
+$route['payments/delete/(:num)']    = 'Payments/delete/$1';
+$route['payments/student/(:num)']   = 'Payments/student/$1';
+$route['payments/report']           = 'Payments/report';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
