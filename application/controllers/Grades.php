@@ -174,18 +174,20 @@ class Grades extends My_Controller {
         echo json_encode($subjects);
     }
 
-    // Grade label helper (called from view via $this->)
-    public function _get_grade_label($score) {
-        if ($score >= 90) { 
-            return '<span class="label label-success" style="font-size:14px">A</span>';
-        } else if ($score >= 80) {
-            return '<span class="label label-info"    style="font-size:14px">B</span>';
-        } else if ($score >= 70) {
-            return '<span class="label label-primary" style="font-size:14px">C</span>';
-        } else if ($score >= 60) { 
-            return '<span class="label label-warning" style="font-size:14px">D</span>';
-        } else {              
-            return '<span class="label label-danger"  style="font-size:14px">F</span>';
+    // Grade label helper (called from view)
+    public function get_grade_label($score) {
+        $grades = [
+            90 => ['bg-success', 'A'],
+            80 => ['bg-info', 'B'],
+            70 => ['bg-primary', 'C'],
+            60 => ['bg-warning', 'D'],
+            0  => ['bg-danger', 'F'],
+        ];
+
+        foreach ($grades as $threshold => $data) {
+            if ($score >= $threshold) {
+                return "<span class='badge {$data[0]}' style='font-size:16px'>{$data[1]}</span>";
+            }
         }
     }
 }

@@ -43,7 +43,7 @@
                     </td>
                     <td class="grade-label text-center">
                         <?php if ($student->score !== null): ?>
-                            <?= get_instance()->_get_grade_label($student->score) ?>
+                            <?= get_instance()->get_grade_label($student->score) ?>
                         <?php else: ?>
                             <span class="text-muted">—</span>
                         <?php endif; ?>
@@ -77,7 +77,7 @@
         else if (score >= 70) { grade = 'C'; cls = 'primary'; }
         else if (score >= 60) { grade = 'D'; cls = 'warning'; }
         else                  { grade = 'F'; cls = 'danger'; }
-        $label.html('<span class="label label-' + cls + '" style="font-size:14px">' + grade + '</span>');
+        $label.html('<span class="badge bg-' + cls + '" style="font-size:16px">' + grade + '</span>');
     });
 </script>
 

@@ -63,6 +63,13 @@
 <?php $this->load->view('layouts/partials/footer_libraries'); ?>
 
 <script>
+    // Reset input on page load
+    window.addEventListener('pageshow', function (event) {
+        if (event.persisted || (typeof window.performance != 'undefined' && window.performance.navigation.type === 2)) {
+            window.location.reload();
+        }
+    });
+
     // Dynamically load subjects when class changes.
     $('#class_id').on('change', function() {
         var class_id = $(this).val();

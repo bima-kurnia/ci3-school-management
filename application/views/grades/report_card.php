@@ -61,7 +61,7 @@
                         <?= $average ?>
                     </div>
                     <div style="margin-top:5px;">
-                        <?= get_instance()->_get_grade_label($average) ?>
+                        <?= get_instance()->get_grade_label($average) ?>
                     </div>
                     <div style="color:#6c757d; font-size:12px; margin-top:5px;">
                         Overall Average
@@ -106,7 +106,7 @@
                         </div>
                     </td>
                     <td class="text-center">
-                        <?= get_instance()->_get_grade_label($grade->score) ?>
+                        <?= get_instance()->get_grade_label($grade->score) ?>
                     </td>
                     <td class="text-center">
                         <?php
@@ -124,7 +124,7 @@
                 <tr style="background:#f8f9fa;">
                     <td colspan="2" class="text-right"><strong>Overall Average</strong></td>
                     <td class="text-center"><strong><?= $average ?></strong></td>
-                    <td class="text-center"><?= get_instance()->_get_grade_label($average) ?></td>
+                    <td class="text-center"><?= get_instance()->get_grade_label($average) ?></td>
                     <td class="text-center">
                         <?php
                             if      ($average >= 90) echo '<strong class="text-success">Excellent</strong>';

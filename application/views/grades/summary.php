@@ -102,7 +102,7 @@
                         <strong><?= $avg ?></strong>
                     </td>
                     <td class="text-center">
-                        <?= get_instance()->_get_grade_label($avg) ?>
+                        <?= get_instance()->get_grade_label($avg) ?>
                     </td>
                     <td class="text-center">
                         <a href="<?= site_url("grades/report_card/{$row->student_id}?semester={$semester}") ?>"
