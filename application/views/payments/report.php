@@ -216,11 +216,38 @@ new Chart(document.getElementById('monthlyChart'), {
 <!-- Print styles -->
 <style>
 @media print {
-    .sidebar, .top-navbar, .btn,
-    form, .card:first-child { display: none !important; }
-    .main-wrapper { margin-left: 0 !important; }
-    .col-md-8 { width: 100% !important; }
+    /* Hide UI chrome */
+    .sidebar,
+    .top-navbar,
+    .flash-message,
+    .btn,
+    form { display: none !important; }
+
+    /* Reset layout — this is the main culprit */
+    body { background: #fff !important; }
+    .main-wrapper {
+        margin-left: 0 !important;
+        padding: 0 !important;
+    }
+    .content-area {
+        padding: 10px !important;
+    }
+
+    /* Fix Bootstrap column collapsing on print */
+    .col-md-8,
+    .col-md-4,
+    .col-md-3,
+    .col-md-2 {
+        float: none !important;
+        width: 100% !important;
+        display: block !important;
+    }
+
+    /* Hide the right column (chart + breakdown) */
     .col-md-4 { display: none !important; }
+
+    /* Remove shadows */
+    .card { box-shadow: none !important; }
 }
 </style>
 
