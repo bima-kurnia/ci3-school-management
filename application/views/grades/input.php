@@ -60,4 +60,25 @@
     </div>
 </div>
 
-<?php $this->load->view('layouts/footer'); ?>
+<?php $this->load->view('layouts/partials/footer_libraries'); ?>
+
+<script>
+    // Live grade label update as user types
+    $(document).on('input', '.score-input', function() {
+        var score = parseFloat($(this).val());
+        var $label = $(this).closest('tr').find('.grade-label');
+        if (isNaN(score) || $(this).val() === '') {
+            $label.html('<span class="text-muted">—</span>');
+            return;
+        }
+        var grade, cls;
+        if      (score >= 90) { grade = 'A'; cls = 'success'; }
+        else if (score >= 80) { grade = 'B'; cls = 'info'; }
+        else if (score >= 70) { grade = 'C'; cls = 'primary'; }
+        else if (score >= 60) { grade = 'D'; cls = 'warning'; }
+        else                  { grade = 'F'; cls = 'danger'; }
+        $label.html('<span class="label label-' + cls + '" style="font-size:14px">' + grade + '</span>');
+    });
+</script>
+
+<?php $this->load->view('layouts/partials/footer_scripts'); ?>

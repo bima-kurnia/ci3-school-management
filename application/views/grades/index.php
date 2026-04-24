@@ -60,4 +60,32 @@
 </div>
 </div>
 
-<?php $this->load->view('layouts/footer'); ?>
+<?php $this->load->view('layouts/partials/footer_libraries'); ?>
+
+<script>
+    // Dynamically load subjects when class changes.
+    $('#class_id').on('change', function() {
+        var class_id = $(this).val();
+        var $subject = $('#subject_id');
+
+        $subject.html('<option value="">Loading...</option>');
+
+        if (!class_id) {
+            $subject.html('<option value="">-- Select Class First --</option>');
+            return;
+        }
+
+        $.getJSON('<?= site_url("grades/get_subjects") ?>/' + class_id, function(data) {
+            var options = '<option value="">-- Select Subject --</option>';
+            if (data.length === 0) {
+                options = '<option value="">No subjects assigned</option>';
+            }
+            $.each(data, function(i, subject) {
+                options += '<option value="' + subject.id + '">' + subject.name + '</option>';
+            });
+            $subject.html(options);
+        });
+    });
+</script>
+
+<?php $this->load->view('layouts/partials/footer_scripts'); ?>

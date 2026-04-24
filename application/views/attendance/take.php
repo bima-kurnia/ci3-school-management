@@ -101,4 +101,14 @@
     </div>
 </div>
 
-<?php $this->load->view('layouts/footer'); ?>
+<?php $this->load->view('layouts/partials/footer_libraries'); ?>
+
+<script>
+    // Mark all students with a single status.
+    $('.mark-all').on('click', function() {
+        var status = $(this).data('status');
+        $('input[type="radio"][value="' + status + '"]').prop('checked', true);
+    });
+</script>
+
+<?php $this->load->view('layouts/partials/footer_scripts'); ?>
